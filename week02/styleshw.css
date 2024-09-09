@@ -1,0 +1,41 @@
+body {
+background-color:lavender;
+color: #FF0099;	
+font-family: Impact, Helvetica, Futura, sans-serif;
+font-size: 33px;
+font-weight: 900;
+text-align: center;
+padding: 100px;
+
+}
+
+main {
+background-color:lavender;	
+}
+
+main a {
+	color: lightpink;
+	text-decoration: none;
+	font-size: 30px;
+}
+
+main a:hover {
+	color: pink;
+}
+
+
+img.detail {
+width:500px;
+}
+
+footer {
+background-color:lavender;
+
+}
+/*decendent selector: h1 is the child of the footer
+making it possible to target a specific piece of 
+content*/
+footer h1 {
+font-size: 25px;
+
+}
