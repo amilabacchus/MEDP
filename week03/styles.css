@@ -1,0 +1,59 @@
+
+body {
+	font-family: "Handjet", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "ELGR" 1,
+    "ELSH" 2;
+
+    background-image: url("images/rainbow.jpg");
+    background-attachment: fixed;
+    text-align: center;
+}
+
+header {
+	font-weight: 500;
+	font-size: 24px;
+	color: royalblue;
+}
+
+#wrapper {
+  background-color: powderblue;
+  padding: 40px;
+  margin: 100px;
+  border: solid 20px skyblue ;
+}
+
+nav {
+  background-color: skyblue;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+}
+
+nav a {
+
+  text-decoration: none;
+  color: blueviolet;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+img.large {
+	width:500px;
+}
+
+img.small {
+	width:500px;
+}
+
+p span.school {
+  color: blueviolet;
+}
+
+footer a {
+	color: blueviolet;
+}
