@@ -1,0 +1,45 @@
+body{
+	background-color: #fbd1ff;
+	font-family: "Playfair Display", serif;
+  	font-optical-sizing: auto;
+  	font-weight: <weight>;
+  	font-style: normal;
+
+  	text-align: center;
+}
+
+header h1 {
+	font-weight: 850;
+	font-size: 50px;
+		color: #d94ff5;
+}
+
+header h2 {
+	font-weight: 700;
+	font-size: 30px;
+	color: #e93afc;
+}
+
+main h1 {
+	color: #e93afc;
+}
+
+#wrapper {
+	padding: 40 px;
+	margin: 100px;
+
+}
+
+nav a {
+
+  text-decoration: none;
+  color: #9234eb;
+}
+
+nav a:hover {
+  color: #34ebc6;
+}
+
+p span.color {
+  color: #d94ff5;
+}
