@@ -1,0 +1,89 @@
+/* START border-box fix */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+/* END border-box fix */
+
+
+
+
+body {
+  
+  padding: 0;
+  margin: 0;
+  display: flex; /* set max width of .container but display body as flex and center */
+  justify-content: center; /* this centers the contents of the body like .container */
+  
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+}
+
+/* Add paddig to all of the .container child elements*/
+.container > * {
+  padding: 30px;
+}
+
+h1 {
+  color: #bfffff;
+  font-size: 40px;
+}
+
+h2 {
+  color: #c9f5f5;
+  text-align: center;
+}
+
+h3 {
+  color: #bdffe7;
+}
+
+div.container {
+  font-family: "DynaPuff", system-ui;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  color: #e8ffff;
+  display: flex; /* Use flex box */
+  flex-wrap: wrap; /* wrap */
+  max-width: 1920px;
+}
+
+header {
+  background: #0ff7ec;
+  text-align: center;
+  flex: 1 0 100%; /* grow on, shrink off, span width of browse */
+  order: 1;
+}
+
+main {
+  background: #2ce8df;
+  flex: 1 1 500px; /* grow on shrink on */
+  order: 3;
+}
+
+nav {
+  background: #1ac9c0;
+  flex: 1 0 200px; /* grow bus do not shrink less than basis */
+  order: 2;
+}
+
+
+aside {
+  background: #05f2e7;
+  flex: 1 0 200px; /* grow bus do not shrink less than basis */
+  order: 4;
+}
+
+
+footer { 
+  background: #4bd6cf;
+  flex: 1 0 100%; /* grow on, shrink off, span width of browse */
+  order: 5;
+  text-align: center;
+  font-size: 20px;
+}
