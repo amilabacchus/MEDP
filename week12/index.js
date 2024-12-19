@@ -2,13 +2,13 @@
 let particleTexture;
 let particleSystem;
 
-function preload() {
-  particleTexture = loadImage('/assets/particle_texture.png');
-}
+//function preload() {
+//  particleTexture = loadImage('/assets/particle_texture.png');
+//}
 
 function setup() {
   // Set the canvas size
-  createCanvas(1080, 600);
+  createCanvas(720, 400);
   colorMode(HSB);
 
   // Initialize the particle system
@@ -24,23 +24,21 @@ function setup() {
 }
 
 function draw() {
-  background(20);
+  background(100,250,150);
 
   // Calculate the wind force based on the mouse x position
   let dx = map(mouseX, 0, width, -0.4, 0.4);
   let wind = createVector(dx, 0);
-  let gravity = createVector(0, 0.1);
 
   // Apply the wind and run the particle system
   particleSystem.applyForce(wind);
-  particleSystem.applyForce(gravity);
   particleSystem.run();
   for (let i = 0; i < 5; i += 1) {
     particleSystem.addParticle();
   }
 
   // Draw an arrow representing the wind force
-  drawVector(wind, createVector(width / 2, 50, 0), 500);
+  drawVector(wind, createVector(width / 2, height / 2), 500);
 }
 
 // Display an arrow to show a vector magnitude and direction
@@ -60,14 +58,14 @@ function drawVector(v, loc, scale) {
 }
 
 class ParticleSystem {
-  constructor(particleCount, origin, textureImage) {
+  constructor(particleCount, origin) {
     this.particles = [];
 
     // Make a copy of the input vector
     this.origin = origin.copy();
-    this.img = textureImage;
+
     for (let i = 0; i < particleCount; ++i) {
-      this.particles.push(new Particle(this.origin, this.img));
+      this.particles.push(new Particle(this.origin));
     }
   }
 
@@ -92,12 +90,12 @@ class ParticleSystem {
   }
 
   addParticle() {
-    this.particles.push(new Particle(this.origin, this.img));
+    this.particles.push(new Particle(this.origin));
   }
 } // class ParticleSystem
 
 class Particle {
-  constructor(pos, imageTexture) {
+  constructor(pos) {
     this.loc = pos.copy();
 
     let xSpeed = randomGaussian() * 0.5;
@@ -105,9 +103,12 @@ class Particle {
 
     this.velocity = createVector(xSpeed, ySpeed);
     this.acceleration = createVector();
-    this.lifespan = 80.0;
-    this.texture = imageTexture;
-    this.color = color(frameCount % 256, 255, 255);
+    this.lifespan = 150.0;
+
+    let hue = random(360);
+    let saturation = 50;
+    let brightness = 90;
+    this.color = color(hue, saturation, brightness);
   }
 
   // Update and draw the particle
@@ -118,9 +119,9 @@ class Particle {
 
   // Draw the particle
   render() {
-    imageMode(CENTER);
-    tint(this.color, this.lifespan);
-    image(this.texture, this.loc.x, this.loc.y);
+    noStroke();
+    fill(this.color, this.lifespan);
+    ellipse(this.loc.x, this.loc.y, 10);
   }
 
   applyForce(f) {
